@@ -1,6 +1,6 @@
 # Create T3 App
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app` with Better Auth as Authentication Provider.
+This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app` with [Better Auth](https://better-auth.com) as Authentication Provider.
 
 ## What's next? How do I make an app with this?
 
