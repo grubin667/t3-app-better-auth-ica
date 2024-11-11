@@ -5,14 +5,14 @@ import { authClient } from "@/lib/auth-client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { signinGithub, signinGoogle } from "@/lib/social-login";
-export default function FUILogin() {
+export default function Login() {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [remember, setRemember] = useState(false);
 
-  const signIn = async (e) => {
+  const signIn = async (e: React.FormEvent)) => {
     e.preventDefault();
     await authClient.signIn.email(
       {
@@ -35,8 +35,6 @@ export default function FUILogin() {
     );
   };
 
-  const { data } = authClient.useSession();
-  console.log({ data });
   return (
     <div className="relative flex min-h-[100dvh] items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
       <div className="z-10 mx-auto w-full max-w-[500px] text-white">

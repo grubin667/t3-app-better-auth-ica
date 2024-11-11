@@ -1,5 +1,4 @@
-import FUISignUp from "@/components/signup";
-
+import SignUp from "@/components/signup";
 export default function SignUpPassword() {
-  return <FUISignUp />;
+  return <SignUp />;
 }

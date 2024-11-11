@@ -7,7 +7,7 @@ export default function ForgetPasswordForm() {
   const [loading, setLoading] = useState(false);
   const forgetPassword = async () => {
     setLoading(true);
-    const { data, error } = await authClient.forgetPassword({
+    await authClient.forgetPassword({
       email,
       redirectTo: "/reset-password",
       fetchOptions: {
@@ -22,7 +22,6 @@ export default function ForgetPasswordForm() {
         },
       },
     });
-    console.log({ data });
   };
   return (
     <div className="flex min-h-screen items-center justify-center">
