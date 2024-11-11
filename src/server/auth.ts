@@ -1,6 +1,9 @@
 import { betterAuth } from "better-auth";
+import { nextCookies } from "better-auth/next-js";
 import { prismaAdapter } from "better-auth/adapters/prisma";
 import { PrismaClient } from "@prisma/client";
+import { cache } from "react";
+import { headers } from "next/headers";
 
 const prisma = new PrismaClient();
 export const auth = betterAuth({
@@ -9,17 +12,13 @@ export const auth = betterAuth({
   }),
   emailAndPassword: {
     enabled: true,
-
-    sendResetPassword: async (user, url, token) => {
-      console.log("The reset url is: ", url);
-      // Email sending function will be here
-      // await sendEmail({
-      //   to: user.email,
-      //   subject: "Reset your password",
-      //   text: `Click the link to reset your password: ${url}`,
-      // });
+    async sendResetPassword(_, url) {
+      console.log("Reset password URL:", url);
     },
   },
+  plugins: [
+    nextCookies()
+  ],
   socialProviders: {
     github: {
       clientId: process.env.GITHUB_CLIENT_ID!,
@@ -31,3 +30,9 @@ export const auth = betterAuth({
     },
   },
 });
+
+export const getSession = cache(async () => {
+  return await auth.api.getSession({
+    headers: await headers()
+  })
+})

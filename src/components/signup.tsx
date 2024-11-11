@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { type SVGProps, useState } from "react";
 import { useRouter } from "next/navigation";
 import { authClient } from "@/lib/auth-client";
 import { signinGithub, signinGoogle } from "@/lib/social-login";
+
 export default function SignUp() {
   const router = useRouter();
   const [email, setEmail] = useState("");
@@ -22,15 +23,9 @@ export default function SignUp() {
         image: undefined,
       },
       {
-        onRequest: (ctx) => {
-          console.log({ ctx });
-        },
-        onSuccess: (ctx) => {
-          setTimeout(() => {
-            router.push("/login");
-          }, 1000);
-          console.log("HELLO WORLD", ctx);
-          //redirect to the dashboard
+        onSuccess: () => {
+          setLoading(false);
+          router.push("/");
         },
         onError: (ctx) => {
           alert(ctx.error.message);
@@ -142,7 +137,7 @@ export default function SignUp() {
   );
 }
 
-function ChromeIcon(props: any) {
+function ChromeIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -165,7 +160,7 @@ function ChromeIcon(props: any) {
   );
 }
 
-function GithubIcon(props: any) {
+function GithubIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}

@@ -1,21 +1,26 @@
 # Create T3 App
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app` with Better Auth as Authentication Provider.
 
 ## What's next? How do I make an app with this?
-
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
 
 If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
 
 - [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
+- [Better Auth](https://better-auth.com)
 - [Prisma](https://prisma.io)
 - [Drizzle](https://orm.drizzle.team)
 - [Tailwind CSS](https://tailwindcss.com)
 - [tRPC](https://trpc.io)
 
-## Learn More
+## Learn More About Better Auth
+
+To learn more about [Better Auth](https://better-auth.com/), take a look at the following resources:
+
+- [Documentation](https://better-auth.com/docs)
+- [Discord](https://discord.gg/GYC3W7tZzb) — Join our Discord server to ask questions and get help
+
+## Learn More About the T3 Stack
 
 To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
 

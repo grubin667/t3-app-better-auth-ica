@@ -1,5 +1,6 @@
 "use client";
 import { authClient } from "@/lib/auth-client";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 type UserProps = {
   id: string;
@@ -29,11 +30,22 @@ export default function UserProfile({ user }: { user: UserProps }) {
     <div className="flex items-start gap-5">
       <div className="flex cursor-pointer items-center">
         <div>
-          <img
-            alt={user.name ?? "user image"}
-            src={user.image}
-            className="inline-block h-9 w-9 rounded-full"
-          />
+          {
+            user.image ? (
+              <Image
+                alt={user.name ?? "user image"}
+                src={user.image}
+                className="inline-block h-9 w-9 rounded-full"
+              />
+            ) : (
+              <div className="bg-gray-100 h-10 w-10 rounded-full flex items-center justify-center text-black">
+                {
+                  user.name?.charAt(0)
+                }
+              </div>
+            )
+          }
+
         </div>
         <div className="ml-3">
           <p className="text-sm font-medium text-gray-100 group-hover:text-gray-200">

@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { authClient } from "@/lib/auth-client";
-import { useState } from "react";
+import { type SVGProps, useState } from "react";
 import { useRouter } from "next/navigation";
 import { signinGithub, signinGoogle } from "@/lib/social-login";
+import { authClient } from "@/lib/auth-client";
+
 export default function Login() {
   const router = useRouter();
   const [email, setEmail] = useState("");
@@ -12,13 +13,13 @@ export default function Login() {
   const [loading, setLoading] = useState(false);
   const [remember, setRemember] = useState(false);
 
-  const signIn = async (e: React.FormEvent)) => {
+  const signIn = async (e: React.FormEvent) => {
     e.preventDefault();
     await authClient.signIn.email(
       {
         email,
         password,
-        dontRememberMe: remember,
+        rememberMe: remember,
       },
       {
         onRequest: () => {
@@ -87,7 +88,7 @@ export default function Login() {
                 id="remember-me"
                 name="remember-me"
                 type="checkbox"
-                onChange={(e) => setRemember(e.target.value)}
+                onChange={(e) => setRemember(e.target.checked)}
                 className="h-4 w-4 rounded-lg border-gray-300 text-purple-600 focus:ring-purple-600"
               />
               <label
@@ -121,7 +122,7 @@ export default function Login() {
 
         <div className="mt-6 text-center text-sm">
           <p className="text-gray-500 dark:text-gray-400">
-            Don't have an account?
+            Don&apos;t have an account?
             <Link
               className="ml-2 font-medium text-gray-900 underline-offset-4 hover:underline dark:text-gray-500"
               href="/signup"
@@ -154,7 +155,7 @@ export default function Login() {
   );
 }
 
-function ChromeIcon(props: any) {
+function ChromeIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -177,7 +178,7 @@ function ChromeIcon(props: any) {
   );
 }
 
-function GithubIcon(props: any) {
+function GithubIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
