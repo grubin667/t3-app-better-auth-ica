@@ -13,7 +13,7 @@ export default async function Home() {
         <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16">
           <h1 className="text-5xl font-extrabold tracking-tight sm:text-[5rem]">
             <span className="text-[hsl(280,100%,70%)]">T3</span> App{" "}
-            <span className="text-[hsl(280,100%,70%)]">x </span> BetterAuth{" "}
+            <span className="text-[hsl(280,100%,70%)]">x </span> Better Auth{" "}
             <div className="ml-[-10px] inline-flex h-3 w-3 rounded-full bg-white"></div>
           </h1>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
@@ -33,10 +33,9 @@ export default async function Home() {
               href="https://better-auth.com/docs"
               target="_blank"
             >
-              <h3 className="text-2xl font-bold">BetterAuth →</h3>
+              <h3 className="text-2xl font-bold">Better Auth →</h3>
               <div className="text-lg">
-                Learn more about Better Auth, the plugin ecosystem, and the
-                frameworks support.{" "}
+                Learn more about Better Auth, the plugin ecosystem, next js integrations and more.
               </div>
             </Link>
           </div>

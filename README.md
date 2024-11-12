@@ -8,7 +8,6 @@ If you are not familiar with the different technologies used in this project, pl
 
 - [Next.js](https://nextjs.org)
 - [Better Auth](https://better-auth.com)
-- [Prisma](https://prisma.io)
 - [Drizzle](https://orm.drizzle.team)
 - [Tailwind CSS](https://tailwindcss.com)
 - [tRPC](https://trpc.io)
