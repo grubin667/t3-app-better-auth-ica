@@ -45,21 +45,30 @@ model Session {
   userAgent String?
   userId    String
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  token     String
+  createdAt DateTime
+  updatedAt DateTime
 
+  @@unique([token])
   @@map("session")
 }
 
 model Account {
-  id           String    @id
-  accountId    String
-  providerId   String
-  userId       String
-  user         User      @relation(fields: [userId], references: [id], onDelete: Cascade)
-  accessToken  String?
-  refreshToken String?
-  idToken      String?
-  expiresAt    DateTime?
-  password     String?
+  id                    String    @id
+  accountId             String
+  providerId            String
+  userId                String
+  user                  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  accessToken           String?
+  refreshToken          String?
+  idToken               String?
+  expiresAt             DateTime?
+  password              String?
+  accessTokenExpiresAt  DateTime?
+  refreshTokenExpiresAt DateTime?
+  scope                 String?
+  createdAt             DateTime
+  updatedAt             DateTime
 
   @@map("account")
 }
@@ -69,6 +78,9 @@ model Verification {
   identifier String
   value      String
   expiresAt  DateTime
+
+  createdAt DateTime?
+  updatedAt DateTime?
 
   @@map("verification")
 }

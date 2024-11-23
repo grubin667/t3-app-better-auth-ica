@@ -6,13 +6,14 @@ import { cache } from "react";
 import { headers } from "next/headers";
 
 const prisma = new PrismaClient();
+
 export const auth = betterAuth({
   database: prismaAdapter(prisma, {
     provider: "postgresql",
   }),
   emailAndPassword: {
     enabled: true,
-    async sendResetPassword(_, url) {
+    async sendResetPassword({ url }) {
       console.log("Reset password URL:", url);
     },
   },
