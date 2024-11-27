@@ -9,7 +9,7 @@ type UserProps = {
   name: string;
   createdAt: Date;
   updatedAt: Date;
-  image?: string | undefined;
+  image?: string | undefined | null;
 };
 
 export default function UserProfile({ user }: { user: UserProps }) {
