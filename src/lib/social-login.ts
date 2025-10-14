@@ -13,3 +13,10 @@ export const signinGoogle = async () => {
   });
   return data;
 };
+
+export const signinMagicLink = async () => {
+  const data = await authClient.signIn.social({
+    provider: "magicLink",
+  });
+  return data;
+};

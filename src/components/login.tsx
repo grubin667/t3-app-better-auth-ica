@@ -150,6 +150,20 @@ export default function Login() {
             </button>
           </div>
         </div>
+
+        <div className="mt-6 border-t border-t-gray-600 pt-6">
+          <div className="flex items-center justify-center gap-4">
+
+            <button
+              onClick={signinMagicLink}
+              className="font-geist relative mx-auto flex h-12 w-full transform-gpu items-center justify-center gap-2 overflow-hidden rounded bg-neutral-950 bg-purple-200/10 px-5 py-2.5 text-center tracking-tighter text-white transition-all duration-300 hover:bg-neutral-800 hover:bg-transparent/5 hover:ring-2 hover:ring-purple-800 hover:ring-offset-2 hover:ring-offset-zinc-900 active:bg-transparent dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]"
+            >
+              <ChromeIcon className="mr-2 h-4 w-4" />
+              Sign in with Magic Link
+            </button>
+          </div>
+        </div>
+
       </div>
     </div>
   );
