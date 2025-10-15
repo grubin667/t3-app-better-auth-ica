@@ -6,6 +6,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         sans: ["var(--font-geist-sans)", ...fontFamily.sans],
       },
     },

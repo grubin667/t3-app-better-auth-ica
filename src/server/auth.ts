@@ -21,14 +21,8 @@ export const auth = betterAuth({
   },
   plugins: [
     magicLink({
-      sendMagicLink: async ({ email, url }) => {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
-        await resend.emails.send({
-          from: "Acme <onboarding@resend.dev>",
-          to: email,
-          subject: "Magic Link",
-          html: `Click the link to login into your account: ${url}`,
-        });
+      sendMagicLink: async ({ email, token, url }, request) => {
+        // send email to user
       }
     }),
     nextCookies()
