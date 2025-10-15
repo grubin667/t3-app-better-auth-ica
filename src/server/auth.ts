@@ -1,5 +1,4 @@
 import { betterAuth } from "better-auth";
-import { resend } from "@/helpers/email/resend";
 import { nextCookies } from "better-auth/next-js";
 import { prismaAdapter } from "better-auth/adapters/prisma";
 import { PrismaClient } from "@/generated/prisma/client";
@@ -20,11 +19,11 @@ export const auth = betterAuth({
     },
   },
   plugins: [
-    magicLink({
-      sendMagicLink: async ({ email, token, url }, request) => {
-        // send email to user
-      }
-    }),
+    // magicLink({
+    //   sendMagicLink: async ({ email, token, url }, request) => {
+    //     // send email to user
+    //   }
+    // }),
     nextCookies()
   ],
   socialProviders: {
