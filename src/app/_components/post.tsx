@@ -1,12 +1,10 @@
 "use client";
 
 import { useState } from "react";
-
 import { api } from "@/trpc/react";
 
 export function LatestPost() {
   const { data: latestPost } = api.post.getLatest.useQuery();
-
   const utils = api.useUtils();
   const [name, setName] = useState("");
   const createPost = api.post.create.useMutation({

@@ -12,7 +12,7 @@ export default function LoginForm() {
     const res = await fetch('/api/send-magic-link', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, firstName: 'User' }), // TODO: Fetch name from form
+      body: JSON.stringify({ email, firstName: 'User' }), // Fetch name from form if needed
     });
     if (res.ok) {
       alert('Check your email for the magic link!');

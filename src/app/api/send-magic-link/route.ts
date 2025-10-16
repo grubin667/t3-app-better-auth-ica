@@ -11,7 +11,7 @@ export async function POST(request: NextRequest) {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const { email, firstName } = await request.json();
 
-    // Generate a simple token (store in DB/session for verification later)
+    // Generate a simple token (store in DB/session for verification after user clicks email link)
     const token = randomUUID();
     const magicLink = `${process.env.NEXT_PUBLIC_BASE_URL}/verify?token=${token}&email=${encodeURIComponent(email)}`; // e.g., http://localhost:3000/verify?...
 
