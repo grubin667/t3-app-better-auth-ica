@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from 'react';
 
 interface EmailTemplateProps {
@@ -13,7 +15,7 @@ export function EmailTemplate({ firstName, magicLink }: EmailTemplateProps) {
       <a href={magicLink} style={{ color: '#3B82F6', textDecoration: 'none', fontWeight: 'bold' }}>
         Sign In Now
       </a>
-      <p>If you didn't request this, ignore this email.</p>
+      <p>If you didn&apos;t request this, ignore this email.</p>
     </div>
   );
 }
